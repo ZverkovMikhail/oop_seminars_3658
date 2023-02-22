@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    {
+      "id": "0",
+      "body": "Task1",
+      "deadline": "2023-02-23T19:00",
+      "added_time": "2023-01-24T18:00",
+      "author_name": "Петрович"
+    },
+    {
+      "id": "1",
+      "body": "Task2",
+      "deadline": "2023-03-06T18:00",
+      "added_time": "2022-01-24T18:00",
+      "author_name": "Семеныч"
+    },
+    {
+      "id": "2",
+      "body": "Task3",
+      "deadline": "2023-03-01T18:00",
+      "added_time": "2021-01-24T18:00",
+      "author_name": "Петрович"
+    },
+    {
+      "id": "3",
+      "body": "Task4",
+      "deadline": "2023-04-24T18:00",
+      "added_time": "2021-01-24T18:00",
+      "author_name": "Иванов"
+    },
+    {
+      "id": "4",
+      "body": "Task5",
+      "deadline": "2023-03-1T18:00",
+      "added_time": "2021-01-24T18:00",
+      "author_name": "Иванов"
+    },
+    {
+      "id": "5",
+      "body": "Task6",
+      "deadline": "2023-03-10T18:00",
+      "added_time": "2021-01-24T18:00",
+      "author_name": "Иванов"
+    }
+  ]
+}
