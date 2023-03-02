@@ -1,21 +1,13 @@
-package Calculator;
+package Logger;
 import java.io.IOException;
 import java.util.Date;
 import java.util.logging.*;
 
-public class FileLogger {
-    String name;
-    private FileLogger(Object o) {
-        name = o.getClass().getName();
-    }
-    public static FileLogger init(Object o){
-        return new FileLogger(o);
-    }
-
-    public Logger getLogger(){
-        Logger logger = Logger.getLogger(name);
+public class FileLogger implements Logger{
+    private java.util.logging.Logger logger;
+    private FileLogger(String name) {
+        this.logger = java.util.logging.Logger.getLogger(name);
         FileHandler fh;
-
         {
             try {
                 fh = new FileHandler(name + ".log", true);
@@ -36,9 +28,20 @@ public class FileLogger {
                 logger.addHandler(fh);
                 logger.setUseParentHandlers(false);
             } catch (IOException e) {
-                return null;
             }
         }
-        return logger;
+    }
+    public static FileLogger init(String name){
+        return new FileLogger(name);
+    }
+
+    @Override
+    public void warning(String msg) {
+        logger.log(Level.WARNING, msg);
+    }
+
+    @Override
+    public void info(String msg) {
+        logger.log(Level.INFO, msg);
     }
 }

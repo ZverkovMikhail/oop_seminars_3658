@@ -1,12 +1,12 @@
 package Calculator.View;
-import Calculator.FileLogger;
+import Logger.FileLogger;
 import Calculator.Math.Math;
 import Calculator.Number.Number;
 import Calculator.Model.MenuModel;
+import Logger.Logger;
+
 import java.util.Map;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ConsoleView extends View<Math> {
 
@@ -14,7 +14,7 @@ public class ConsoleView extends View<Math> {
     private static ConsoleView instance = null;
 
     private ConsoleView() {
-         log = FileLogger.init(this).getLogger();
+         log = FileLogger.init(this.getClass().getName());
     }
 
     public static ConsoleView getInstance() {
@@ -52,7 +52,7 @@ public class ConsoleView extends View<Math> {
     @Override
     public int getCommand() {
         String str = getExpression("Введите команду");
-        log.log(Level.INFO, "Пользователь ввел команду >>> " + str);
+        log.info("Пользователь ввел команду >>> " + str);
         try {
             return Integer.parseInt(str);
         } catch (NumberFormatException e) {
@@ -65,19 +65,19 @@ public class ConsoleView extends View<Math> {
         System.out.print(text + ": ");
         Scanner scanner = new Scanner(System.in);
         String ret = scanner.nextLine();
-        log.log(Level.INFO, "Пользователь ввел >>> " + ret);
+        log.info("Пользователь ввел >>> " + ret);
         return ret;
     }
 
     @Override
     public void printResult(Number num) {
-        log.log(Level.INFO, "Результат вычислений >>> " + num);
+        log.info("Результат вычислений >>> " + num);
         System.out.println("Результат = " + num);
     }
 
     @Override
     public void printError(String text) {
-        log.log(Level.WARNING, text);
+        log.warning(text);
         System.out.println(text);
     }
 
