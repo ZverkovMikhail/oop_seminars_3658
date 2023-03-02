@@ -5,7 +5,7 @@ import Calculator.Number.RationalNumber;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RationalParser extends Parser<RationalNumber>{
+public class RationalParser extends ComplexRationalParser<RationalNumber>{
     public static RationalParser instance;
 
     private RationalParser() {

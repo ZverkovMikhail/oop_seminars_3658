@@ -5,7 +5,7 @@ import Calculator.Number.ComplexNumber;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ComplexParser extends Parser<ComplexNumber>{
+public class ComplexParser extends ComplexRationalParser<ComplexNumber>{
     public static ComplexParser instance;
 
     private ComplexParser() {
